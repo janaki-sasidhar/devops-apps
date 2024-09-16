@@ -1,18 +1,18 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: flask-example
+  name: {{ .Values.appName }}
   annotations:
     traefik.ingress.kubernetes.io/ssl-redirect: "false"
 spec:
   rules:
-  - host: flask.localhost.com
+  - host: "flask-{{ .Values.namespace }}.localhost.com"
     http:
       paths:
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: flask-example
+            name: {{ .Values.appName }}
             port:
-              number: 5000
+              number: {{ .Values.port }}

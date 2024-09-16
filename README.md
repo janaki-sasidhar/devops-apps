@@ -9,3 +9,11 @@
 `curl node.localhost.com:8081/ping`
 
 `curl flask.localhsot.com:8081/ping`
+
+
+#### Using HELM
+> Using Node
+> Shift namespace on kubectl with kns
+
+`helm install node-example-release node-chart --values  node-chart/values.yaml`
+`helm install flask-example-release flask-chart --values  flask-chart/values.yaml`

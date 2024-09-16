@@ -1,21 +1,22 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: node-example
+  name: {{ .Values.appName }}
+  namespace: {{ .Values.namespace }}
   annotations:
     traefik.ingress.kubernetes.io/ssl-redirect: "false"
 spec:
   rules:
-  - host: node.localhost.com
+  - host: "node-{{ .Values.namespace }}.localhost.com"
     http:
       paths:
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: node-example
+            name: {{ .Values.appName }}
             port:
-              number: 3000
+              number: {{ .Values.port }}
 
 # kubectl describe ingress node-example
 # For any errors/events

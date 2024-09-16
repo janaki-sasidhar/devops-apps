@@ -1,0 +1,10 @@
+appName: flask-example
+
+port: 5000
+
+namespace: helm-flask
+
+
+image:
+  name: janakisasidhar1/flask-example
+  tag: latest

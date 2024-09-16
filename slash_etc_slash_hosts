@@ -1,2 +1,4 @@
 127.0.0.1 flask.localhost.com
 127.0.0.1 node.localhost.com
+127.0.0.1 flask-helm-flask.localhost.com
+127.0.0.1 node-helm-node.localhost.com

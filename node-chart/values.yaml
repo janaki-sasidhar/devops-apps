@@ -1,0 +1,10 @@
+appName: node-example
+
+port: 3000
+
+namespace: helm-node
+
+
+image:
+  name: janakisasidhar1/node-example
+  tag: latest
